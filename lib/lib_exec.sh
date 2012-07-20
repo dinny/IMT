@@ -40,7 +40,7 @@ function exec_expr
 
     if [ "$err" != "0" ]
     then
-        [ -z "$2" ] && fmt_msg $2
+        [ -n "$2" ] && fmt_msg $2
         exit $err
     fi    
 }
