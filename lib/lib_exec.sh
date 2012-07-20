@@ -34,16 +34,13 @@ function fmt_msg
 # run the expression and output the error if it fails
 function exec_expr
 {
-    echo "in exec_expr: \$# --- $#"
-    echo "              \$@ --- $@"
-    
     $1
 
     local err=$?
 
     if [ "$err" != "0" ]
     then
-        fmt_msg $2
+        [ -z "$2" ] && fmt_msg $2
         exit $err
     fi    
 }
